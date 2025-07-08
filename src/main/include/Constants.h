@@ -7,6 +7,13 @@
 
 #pragma once
 
+// amcu omni drive base variables
+constexpr int kWheelRadius = 50;
+constexpr int kRobotRadius = 150;
+constexpr Motor kMotorLeft  = MOTOR_1;
+constexpr Motor kMotorRight = MOTOR_3;
+constexpr Motor kMotorBack  = MOTOR_0;
+
 /**
  * The Constants header provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants.  This should not be used for any other
