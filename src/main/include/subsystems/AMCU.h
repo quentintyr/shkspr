@@ -15,6 +15,8 @@ using namespace std::literals::chrono_literals;
 
 #define MAX_MSG_STORE 10
 
+#pragma once
+
 enum Motor
 {
   MOTOR_0,

@@ -46,7 +46,7 @@ inline std::string current_time() {
 }
 
 // default log infos
-#define LOG_INFO(value)    { std::cout << "[" << current_time() << "] " << GREEN   << "[INFO] "  << RESET << value << std::endl; }
+#define LOG_INFO(value)    { std::cout << "[" << current_time() << "] " << BOLD << GREEN   << "[INFO] "  << RESET << value << std::endl; }
 #define LOG_WARN(value)    { std::cout << "[" << current_time() << "] " << YELLOW  << "[WARN] "  << RESET << value << std::endl; }
 #define LOG_ERROR(value)   { std::cerr << "[" << current_time() << "] " << RED     << "[ERROR] " << RESET << value << std::endl; }
 
