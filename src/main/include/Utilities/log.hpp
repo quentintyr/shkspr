@@ -17,20 +17,20 @@
 #define PURPLE  "\033[35m"
 #define WHITE   "\033[37m"
 
-// type shi
 #define BOLD        "\033[1m"
 #define bold_res    "\033[22m"
 #define ITALICS     "\033[3m"
 #define UNDERLINE   "\033[4m"
 
-std::ofstream logFile;
+struct ModeInfo {
+    std::string color;
+    std::string name;
+};
 
-void SetupLogging() {
-    logFile.open("/home/pi/robot.log", std::ios::out | std::ios::app);
-    std::cout.rdbuf(logFile.rdbuf());
-    std::cerr.rdbuf(logFile.rdbuf());
-}
-    
+extern ModeInfo last_mode;
+
+void SetupLogging();
+
 inline std::string current_time() {
     using namespace std::chrono;
     auto now = system_clock::now();
@@ -46,14 +46,14 @@ inline std::string current_time() {
 }
 
 // default log infos
-#define LOG_INFO(value)    { std::cout << GREEN << "[INFO] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
-#define LOG_WARN(value)    { std::cout << YELLOW << "[WARN] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
-#define LOG_ERROR(value)   { std::cerr << RED << "[ERROR] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
+#define LOG_INFO(value)    { std::cout << "[" << current_time() << "] " << GREEN   << "[INFO] "  << RESET << value << std::endl; }
+#define LOG_WARN(value)    { std::cout << "[" << current_time() << "] " << YELLOW  << "[WARN] "  << RESET << value << std::endl; }
+#define LOG_ERROR(value)   { std::cerr << "[" << current_time() << "] " << RED     << "[ERROR] " << RESET << value << std::endl; }
 
 // mode log infos
-#define LOG_AUTONOMOUS(value)   { std::cout << PURPLE << "[AUTONOMOUS] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
-#define LOG_TELEOP(value)   { std::cout << CYAN << "[TELEOP] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
-#define LOG_TEST(value)   { std::cout << YELLOW << "[TEST] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
-#define LOG_DISABLED(value)   { std::cout << WHITE << "[CURRENT MODE] " << RESET << value << "                                                  " << " [" << current_time() << "]" << std::endl; }
+#define LOG_AUTONOMOUS(value)   { std::cout << "[" << current_time() << "] " << PURPLE << "[AUTONOMOUS] "    << RESET << value << std::endl; }
+#define LOG_TELEOP(value)       { std::cout << "[" << current_time() << "] " << CYAN   << "[TELEOP] "        << RESET << value << std::endl; }
+#define LOG_TEST(value)         { std::cout << "[" << current_time() << "] " << YELLOW << "[TEST] "          << RESET << value << std::endl; }
+#define LOG_DISABLED(value)     { std::cout << "[" << current_time() << "] " << last_mode.color << last_mode.name << RESET << value << std::endl; }
 
 #endif
