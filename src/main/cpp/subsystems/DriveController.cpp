@@ -7,18 +7,9 @@
 
 #include "subsystems/ExampleSubsystem.h"
 #include "subsystems/AMCU.h"
-#include <Utilities/log.hpp>
-#include <Constants.h>
+#include <utilities/LoggingSystem.h>
+#include <utilities/Constants.h>
 #include <frc/smartdashboard/SmartDashboard.h>
-
-
-ExampleSubsystem::ExampleSubsystem() {
-  // Implementation of subsystem cons tructor goes here.
-}
-
-void ExampleSubsystem::Periodic() {
-  // Implementation of subsystem periodic method goes here.
-}
 
 class DriveController
 {

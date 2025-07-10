@@ -1,5 +1,4 @@
-#ifndef _LOG_HG_
-#define _LOG_HG_
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -55,5 +54,3 @@ inline std::string current_time() {
 #define LOG_TELEOP(value)       { std::cout << "[" << current_time() << "] " << CYAN   << "[TELEOP] "        << RESET << value << std::endl; }
 #define LOG_TEST(value)         { std::cout << "[" << current_time() << "] " << YELLOW << "[TEST] "          << RESET << value << std::endl; }
 #define LOG_DISABLED(value)     { std::cout << "[" << current_time() << "] " << last_mode.color << last_mode.name << RESET << value << std::endl; }
-
-#endif

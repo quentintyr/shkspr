@@ -1,8 +1,8 @@
 #include <fstream>
 #include "Robot.h"
 #include "subsystems/AMCU.h"
-#include "Constants.h"
-#include "Utilities/log.hpp"
+#include "utilities/Constants.h"
+#include "utilities/LoggingSystem.h"
 #include <networktables/NetworkTableInstance.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc2/command/CommandScheduler.h>
