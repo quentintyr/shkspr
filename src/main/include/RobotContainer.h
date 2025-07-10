@@ -11,6 +11,7 @@
 
 #include "commands/ExampleCommand.h"
 #include "subsystems/ExampleSubsystem.h"
+#include "subsystems/CameraSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -30,5 +31,9 @@ class RobotContainer {
   ExampleSubsystem m_subsystem;
   ExampleCommand m_autonomousCommand;
 
+  CameraSubsystem m_cameraSubsystem;
+  // CameraCommand m_camerCommand;
+
   void ConfigureButtonBindings();
+  void CameraStream();
 };

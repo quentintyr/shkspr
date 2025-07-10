@@ -10,8 +10,11 @@
 bool testWasEnabled = false;
 bool firstTimeStartUP = false;
 
+std::unique_ptr<RobotContainer> robotContainer;
+
 void Robot::RobotInit() {
     amcu.initOmniDriveBase(kWheelRadius, kRobotRadius, kMotorLeft, kMotorRight, kMotorBack);
+    robotContainer = std::make_unique<RobotContainer>();
 }
 
 void Robot::RobotPeriodic() {

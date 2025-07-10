@@ -12,10 +12,16 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
 
   // Configure the button bindings
   ConfigureButtonBindings();
+  // camera
+  CameraStream();
 }
 
 void RobotContainer::ConfigureButtonBindings() {
   // Configure your button bindings here
+}
+
+void RobotContainer::CameraStream() {
+  // configure camera stream ig
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {
