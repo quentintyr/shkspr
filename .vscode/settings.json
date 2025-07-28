@@ -79,5 +79,7 @@
     "typeinfo": "cpp",
     "*.inc": "cpp",
     "math": "cpp"
-  }
+  },
+  "wpilib.autoStartRioLog": false,
+  "git.ignoreLimitWarning": true
 }

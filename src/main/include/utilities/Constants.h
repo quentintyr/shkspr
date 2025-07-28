@@ -5,6 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 #include <subsystems/AMCU.h>
+#include <studica/Servo.h>
 
 #pragma once
 
@@ -19,6 +20,11 @@ constexpr Motor kMotorBack  = MOTOR_0;
 
 const int MAP_length = 400; //cm
 const int MAP_width = 200;
+
+constexpr int kElevatorUpLimitSwitch = 8;
+constexpr int kArmFrontLimitSwitch = 9;
+constexpr int kArmBackLimitSwitch = 10;
+constexpr int kElevatorRotateLimitSwitch = 11;
 
 
 
